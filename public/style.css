@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f6f3ee;
+    --bg-accent: #eef3ff;
+    --bg-warm: #f8ece1;
+    --surface: rgba(255, 255, 255, 0.88);
+    --surface-strong: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: rgba(31, 41, 55, 0.08);
+    --primary: #4f6bed;
+    --primary-dark: #3554d1;
+    --primary-soft: rgba(79, 107, 237, 0.12);
+    --danger: #c24141;
+    --danger-soft: rgba(194, 65, 65, 0.12);
+    --shadow: 0 16px 40px rgba(31, 41, 55, 0.08);
+    --radius-xl: 28px;
+    --radius-lg: 18px;
+    --radius-md: 14px;
+}
+
+body {
+    min-height: 100vh;
+    padding: 32px;
+    color: var(--text);
+    font-family: "Aptos", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(79, 107, 237, 0.08), transparent 30%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.10), transparent 26%),
+    radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.06), transparent 28%),
+    linear-gradient(135deg, var(--bg), var(--bg-accent) 54%, #fbf7f2);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(31, 41, 55, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(31, 41, 55, 0.03) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.24), transparent 78%);
+}
+
+main,
+.page-shell {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.hero-card,
+form,
+table {
+    backdrop-filter: blur(18px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+}
+
+.hero-card,
+form {
+    padding: 28px;
+}
+
+.hero-card {
+    margin-bottom: 24px;
+}
+
+h1,
+h2 {
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-family: "Georgia", "Times New Roman", serif;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+}
+
+p,
+label,
+td,
+th,
+input,
+textarea,
+button,
+a {
+    font-size: 1rem;
+}
+
+.subtle,
+label {
+    color: var(--muted);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.page-actions {
+    margin-top: 20px;
+}
+
+button,
+.button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+button:hover,
+.button-link:hover {
+    transform: translateY(-1px);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(79, 107, 237, 0.22);
+    outline-offset: 2px;
+}
+
+button,
+.button-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(79, 107, 237, 0.18);
+}
+
+.button-secondary {
+    background: rgba(79, 107, 237, 0.06);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.button-danger {
+    background: linear-gradient(135deg, #dc6a5d, var(--danger));
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(194, 65, 65, 0.16);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+thead {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff;
+}
+
+th,
+td {
+    padding: 16px 18px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+}
+
+tbody tr {
+    border-bottom: 1px solid rgba(31, 41, 55, 0.06);
+    background: rgba(255, 255, 255, 0.56);
+}
+
+tbody tr:hover {
+    background: rgba(79, 107, 237, 0.06);
+}
+
+td {
+    color: var(--text);
+}
+
+table form,
+.inline-actions {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(31, 41, 55, 0.10);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text);
+    box-shadow: inset 0 1px 2px rgba(31, 41, 55, 0.03);
+}
+
+textarea {
+    min-height: 56px;
+    resize: vertical;
+}
+
+.page-note {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+.home-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -45% auto;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79, 107, 237, 0.16), transparent 68%);
+    pointer-events: none;
+}
+
+.kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.kpi {
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.kpi-value {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.kpi-label {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.table-wrap {
+    overflow: hidden;
+}
+
+.action-chip {
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    background: rgba(79, 107, 237, 0.06);
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 18px;
+    }
+
+    .hero-card,
+    form {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    th,
+    td {
+        padding: 13px 14px;
+    }
+
+    .stack {
+        flex-direction: column;
+    }
+
+    .kpi-row {
+        grid-template-columns: 1fr;
+    }
+
+    button,
+    .button-link {
+        width: 100%;
+    }
+}

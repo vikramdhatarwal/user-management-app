@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero-card home-hero">
+            <p class="subtle">Control center</p>
+            <h1>People dashboard.</h1>
+            <p class="page-note">A small dashboard for creating, updating, and managing users with a sharper visual feel.</p>
+
+            <div class="kpi-row">
+                <div class="kpi">
+                    <span class="kpi-value"><%= totalUsers %></span>
+                    <span class="kpi-label">Total users</span>
+                </div>
+               
+                
+            </div>
+
+            <div class="stack">
+                <a class="button-primary button-link" href="/user/new">Add new user</a>
+                <a class="button-secondary button-link" href="/user">Show all users</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

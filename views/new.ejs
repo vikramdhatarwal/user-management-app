@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero-card">
+            <p class="subtle">Create account</p>
+            <h1>New User</h1>
+            <p class="page-note">Add a user with a clean, modern form experience.</p>
+
+            <form method="POST" action="/user/new" class="form-grid">
+                <label class="field">
+                    <span>Username</span>
+                    <input type="text" name="username" placeholder="Enter username">
+                </label>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="Enter email">
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Enter password">
+                </label>
+
+                <div class="stack">
+                    <button type="submit">Create User</button>
+                    <a class="button-secondary button-link" href="/user">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

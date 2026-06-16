@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero-card">
+            <p class="subtle">Editing user</p>
+            <h1><%= user.email %></h1>
+            <p class="page-note">Update the username and confirm with the account password.</p>
+
+            <form method="POST" action="/user/<%= user.id %>/edit" class="form-grid">
+                <input type="hidden" name="_method" value="PATCH">
+
+                <label class="field">
+                    <span>Username</span>
+                    <textarea name="username"><%= user.username %></textarea>
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Enter password">
+                </label>
+
+                <div class="stack">
+                    <button type="submit">Save changes</button>
+                    <a class="button-secondary button-link" href="/user">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

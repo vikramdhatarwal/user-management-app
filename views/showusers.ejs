@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero-card">
+            <p class="subtle">User directory</p>
+            <h1>All Users</h1>
+            <p class="page-note">Quickly edit or remove any user account.</p>
+        </section>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(user => { %>
+                        <tr>
+                            <td><span class="action-chip"><%= users.indexOf(user) + 1 %></span></td>
+                            <td><%= user.id %></td>
+                            <td><%= user.username %></td>
+                            <td><%= user.email %></td>
+                            <td>
+                                <div class="inline-actions">
+                                    <form method="get" action="/user/<%= user.id %>/edit">
+                                        <button type="submit" class="button-secondary">Edit</button>
+                                    </form>
+                                    <a class="button-danger button-link" href="/user/<%= user.id %>/delete">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="stack page-actions">
+            <a class="button-secondary button-link" href="/">Back to Home</a>
+            <a class="button-primary button-link" href="/user/new">Add User</a>
+        </div>
+    </main>
+</body>
+</html>

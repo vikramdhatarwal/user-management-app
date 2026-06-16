@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete user</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero-card">
+            <p class="subtle">Danger zone</p>
+            <h1>Delete <%= user.email %>?</h1>
+            <p class="page-note">This will remove the user permanently. Confirm with the account password.</p>
+
+            <form method="POST" action="/user/<%= user.id %>/delete?_method=DELETE" class="form-grid">
+                <label class="field">
+                    <span>Password</span>
+                    <input type="password" name="password" placeholder="Enter your password">
+                </label>
+
+                <div class="stack">
+                    <button type="submit" class="button-danger">Yes, delete</button>
+                    <a class="button-secondary button-link" href="/user">No, go back</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
