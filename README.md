@@ -109,7 +109,7 @@ Supports complete CRUD operations with a clean, responsive UI.
 ## 👨‍💻 Author
 
 **Vikram Dhatarwal**  
-[GitHub](https://github.com/YOUR_USERNAME)
+https://github.com/vikramdhatarwal
 
 ---
 
