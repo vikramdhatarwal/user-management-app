@@ -4,7 +4,7 @@ A full-stack user management dashboard built with **Node.js**, **Express**, **My
 Supports complete CRUD operations with a clean, responsive UI.
 
 ## 🔗 Live Demo
-> Coming soon / Add your deployed link here
+[> Coming soon / Add your deployed link here](https://user-management-app-kwh3.onrender.com)
 
 ---
 
