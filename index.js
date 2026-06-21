@@ -1,3 +1,4 @@
+require("dotenv").config();
 const {faker} = require('@faker-js/faker');
 const mysql = require('mysql2');
 const express = require('express');
@@ -11,10 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Vikk@122006',
-  database: 'college'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
 });
 // fake data creation
 let getUser = () => {
@@ -28,8 +30,10 @@ let getUser = () => {
 
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
 // Home route
 app.get('/', (req, res) => {
